@@ -20,7 +20,7 @@ class AntiSpam : PluginBase() {
         server.scheduler.scheduleDelayedTask(ChatTask(name, fun() {
             flag.remove(name)
             val player = server.getPlayer(name)
-            if (player != null) player.sendMessage("§a >> Chat restriction canceled!!")
+            if (player != null)
         }), config.getInt("mute_time") * 20)
     }
 
