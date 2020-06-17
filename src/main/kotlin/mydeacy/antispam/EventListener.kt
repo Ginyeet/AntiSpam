@@ -16,7 +16,6 @@ class EventListener(private val main: AntiSpam) : Listener{
             main.count[name] = 0
         }
         if(main.flag[name] == true) {
-            player.sendMessage("§c >> You can't chat!")
             event.setCancelled()
             return
         }
@@ -25,7 +24,6 @@ class EventListener(private val main: AntiSpam) : Listener{
             event.setCancelled()
             main.flag[name] = true
             main.muteTask(name)
-            player.sendMessage("§c >> Restricted your chat!")
         }else{
             main.chatTask(name)
         }
